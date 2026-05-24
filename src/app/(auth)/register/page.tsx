@@ -1,58 +1,42 @@
 import Image from "next/image";
 import Link from "next/link";
 import logo from "@/app/assets/logo.png";
-
-import {
-  Eye,
-  Lock,
-  MailIcon,
-  Phone,
-  User,
-} from "lucide-react";
+import { Eye, Lock, MailIcon, Phone, User } from "lucide-react";
 
 export default function RegisterPage() {
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
-      
-      {/* card */}
-      <div className="bg-white rounded-xl shadow-xl w-full max-w-2xl p-6 md:p-8">
-        
-        {/* image */}
-        <div className="flex justify-center">
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4 py-10">
+
+      <div className="bg-white shadow-lg rounded-xl p-8 w-full max-w-xl">
+
+        {/* Logo */}
+        <div className="flex justify-center mb-4">
           <Image
             src={logo}
-            alt="logo image"
-            height={120}
-            width={120}
+            alt="RentExpress Logo"
+            width={180}
+            height={100}
           />
         </div>
 
-        {/* heading */}
+        {/* Heading */}
         <div className="text-center mb-6">
-          <h3 className="text-2xl font-bold">
-            Create an Account
-          </h3>
-
+          <h3 className="text-2xl font-bold">Create an Account</h3>
           <p className="text-gray-500 mt-1">
             Fill in your details to get started
           </p>
         </div>
 
-        {/* form */}
+        {/* Form */}
         <form className="space-y-5">
 
-          {/* fullname */}
+          {/* Full Name */}
           <div>
             <label className="block mb-2 font-medium">
               Full Name
             </label>
-
-            <div className="p-3 rounded-lg border flex items-center border-gray-300 focus-within:border-cyan-500">
-              <User
-                size={20}
-                className="text-gray-400 mr-2"
-              />
-
+            <div className="flex items-center border rounded-lg px-3 py-3 border-gray-400 focus-within:border-cyan-500">
+              <User className="text-gray-400 mr-2" size={20} />
               <input
                 type="text"
                 placeholder="Enter your full name"
@@ -61,18 +45,13 @@ export default function RegisterPage() {
             </div>
           </div>
 
-          {/* email */}
+          {/* Email */}
           <div>
             <label className="block mb-2 font-medium">
-              Email
+              Email Address
             </label>
-
-            <div className="p-3 rounded-lg border flex items-center border-gray-300 focus-within:border-cyan-500">
-              <MailIcon
-                size={20}
-                className="text-gray-400 mr-2"
-              />
-
+            <div className="flex items-center border rounded-lg px-3 py-3 border-gray-400 focus-within:border-cyan-500">
+              <MailIcon className="text-gray-400 mr-2" size={20} />
               <input
                 type="email"
                 placeholder="Enter your email"
@@ -81,18 +60,13 @@ export default function RegisterPage() {
             </div>
           </div>
 
-          {/* contact */}
+          {/* Contact */}
           <div>
             <label className="block mb-2 font-medium">
               Contact Number
             </label>
-
-            <div className="p-3 rounded-lg border flex items-center border-gray-300 focus-within:border-cyan-500">
-              <Phone
-                size={20}
-                className="text-gray-400 mr-2"
-              />
-
+            <div className="flex items-center border rounded-lg px-3 py-3 border-gray-400 focus-within:border-cyan-500">
+              <Phone className="text-gray-400 mr-2" size={20} />
               <input
                 type="text"
                 placeholder="Enter your contact number"
@@ -101,133 +75,76 @@ export default function RegisterPage() {
             </div>
           </div>
 
-          {/* gender */}
-          <div className="flex flex-col md:flex-row md:items-center gap-3">
-            
-            <label className="font-medium">
-              Gender:
+          {/* Gender */}
+          <div>
+            <label className="block mb-2 font-medium">
+              Gender
             </label>
-
             <div className="flex gap-6">
-              
               <div>
-                <input
-                  type="radio"
-                  id="male"
-                  name="gender"
-                  value="male"
-                  className="accent-orange-500"
-                />
-
-                <label
-                  htmlFor="male"
-                  className="pl-2"
-                >
-                  Male
-                </label>
+                <input type="radio" id="male" name="gender" value="male" className="accent-cyan-500" />
+                <label htmlFor="male" className="pl-2">Male</label>
               </div>
-
               <div>
-                <input
-                  type="radio"
-                  id="female"
-                  name="gender"
-                  value="female"
-                  className="accent-orange-500"
-                />
-
-                <label
-                  htmlFor="female"
-                  className="pl-2"
-                >
-                  Female
-                </label>
+                <input type="radio" id="female" name="gender" value="female" className="accent-cyan-500" />
+                <label htmlFor="female" className="pl-2">Female</label>
               </div>
-
               <div>
-                <input
-                  type="radio"
-                  id="other"
-                  name="gender"
-                  value="other"
-                  className="accent-orange-500"
-                />
-
-                <label
-                  htmlFor="other"
-                  className="pl-2"
-                >
-                  Other
-                </label>
+                <input type="radio" id="other" name="gender" value="other" className="accent-cyan-500" />
+                <label htmlFor="other" className="pl-2">Other</label>
               </div>
-
             </div>
           </div>
 
-          {/* password */}
+          {/* Password */}
           <div>
             <label className="block mb-2 font-medium">
               Password
             </label>
-
-            <div className="flex items-center border rounded-lg px-3 py-3 border-gray-300 focus-within:border-cyan-500">
-              
-              <Lock
-                className="text-gray-400 mr-2"
-                size={20}
-              />
-
+            <div className="flex items-center border rounded-lg px-3 py-3 border-gray-400 focus-within:border-cyan-500">
+              <Lock className="text-gray-400 mr-2" size={20} />
               <input
                 type="password"
                 placeholder="Enter your password"
                 className="w-full outline-none"
               />
-
-              <Eye
-                className="text-gray-400 cursor-pointer"
-                size={20}
-              />
+              <Eye className="text-gray-400 cursor-pointer" size={20} />
             </div>
           </div>
 
-          {/* confirm password */}
+          {/* Confirm Password */}
           <div>
             <label className="block mb-2 font-medium">
               Confirm Password
             </label>
-
-            <div className="flex items-center border rounded-lg px-3 py-3 border-gray-300 focus-within:border-cyan-500">
-              
-              <Lock
-                className="text-gray-400 mr-2"
-                size={20}
-              />
-
+            <div className="flex items-center border rounded-lg px-3 py-3 border-gray-400 focus-within:border-cyan-500">
+              <Lock className="text-gray-400 mr-2" size={20} />
               <input
                 type="password"
                 placeholder="Confirm your password"
                 className="w-full outline-none"
               />
-
-              <Eye
-                className="text-gray-400 cursor-pointer"
-                size={20}
-              />
+              <Eye className="text-gray-400 cursor-pointer" size={20} />
             </div>
           </div>
 
-          {/* button */}
-          <button className="w-full bg-cyan-500 hover:bg-cyan-600 text-white p-3 rounded-lg font-semibold transition">
+          {/* Button */}
+          <button className="w-full bg-cyan-500 hover:bg-cyan-600 text-white py-3 rounded-lg font-semibold transition">
             Register
           </button>
 
         </form>
-          <p className="text-center text-sm text-gray-500">
-            Already have an account?{" "}
-            <Link href="/login" className="text-cyan-600 hover:underline font-medium">
-              Log in
-            </Link>
-          </p>
+
+        {/* Login */}
+        <p className="text-center mt-6">
+          Already have an account?{" "}
+          <Link href="/login">
+            <span className="text-cyan-500 font-semibold hover:underline cursor-pointer">
+              Login
+            </span>
+          </Link>
+        </p>
+
       </div>
     </div>
   );

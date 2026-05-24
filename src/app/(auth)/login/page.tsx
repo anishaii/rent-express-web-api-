@@ -7,7 +7,7 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4">
       
-      <div className="bg-white shadow-lg rounded-xl p-8 w-full max-w-md">
+      <div className="bg-white shadow-lg rounded-xl p-8 w-full max-w-lg">
 
         {/* Logo */}
         <div className="flex justify-center mb-4">
@@ -36,7 +36,7 @@ export default function LoginPage() {
               Email Address
             </label>
 
-            <div className="flex items-center border rounded-lg px-3 py-3 focus-within:border-cyan-500">
+            <div className="flex items-center border rounded-lg px-3 py-3  border-gray-400 focus-within:border-cyan-500">
               <Mail className="text-gray-400 mr-2" size={20} />
 
               <input
@@ -53,7 +53,7 @@ export default function LoginPage() {
               Password
             </label>
 
-            <div className="flex items-center border rounded-lg px-3 py-3 focus-within:border-cyan-500">
+            <div className="flex items-center border rounded-lg px-3 py-3 border-gray-400 focus-within:border-cyan-500">
               <Lock className="text-gray-400 mr-2" size={20} />
 
               <input
@@ -69,18 +69,6 @@ export default function LoginPage() {
             </div>
           </div>
 
-          {/* Remember + Forgot */}
-          <div className="flex items-center justify-between text-sm">
-            <label className="flex items-center gap-2 text-gray-600">
-              <input type="checkbox" />
-              Remember me
-            </label>
-
-            <p className="text-orange-500 cursor-pointer">
-              Forgot Password?
-            </p>
-          </div>
-
           {/* Button */}
           <button
             className="w-full bg-cyan-500 hover:bg-cyan-600 text-white py-3 rounded-lg font-semibold transition"
@@ -91,7 +79,7 @@ export default function LoginPage() {
 
         {/* Register */}
         <p className="text-center mt-6">
-          Don’t have an account?<Link href="/register"><span className="text-cyan-500 font-semibold cursor-pointer">
+          Don’t have an account?<Link href="/register"><span className="text-cyan-500 font-semibold hover:underline cursor-pointer">
             Register
           </span>
           </Link>
