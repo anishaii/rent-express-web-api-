@@ -99,11 +99,6 @@ export default function LoginForm() {
                  : <Eye className="text-gray-400 cursor-pointer" size={20} />
                 }
               </div>
-
-              <Eye
-                className="text-gray-400 cursor-pointer"
-                size={20}
-              />
             </div>
             {errors.password && 
             (
