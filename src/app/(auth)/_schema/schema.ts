@@ -1,7 +1,28 @@
 import { z } from "zod";
 
+// Login schema
 export const loginSchema = z.object({
   email: z.string().email("Invalid email address"),
   password: z.string().min(6, "Password must be atleast 6 character"),
 });
 export type LoginFormData = z.infer<typeof loginSchema>;
+
+// register schema
+export const registerSchema = z
+  .object({
+    fullName: z.string().min(1, "Full name is required"),
+    email: z.string().email("Invalid email address"),
+    contactNumber: z
+      .string()
+      .min(10, "Contact number must be at least 10 digits"),
+    gender: z.enum(["male", "female", "other"], {
+      message: "Please select a gender",
+    }),
+    password: z.string().min(6, "Password must be at least 6 characters"),
+    confirmPassword: z.string().min(1, "Please confirm your password"),
+  })
+  .refine((data) => data.password === data.confirmPassword, {
+    message: "Passwords do not match",
+    path: ["confirmPassword"],
+  });
+export type RegisterFormData = z.infer<typeof registerSchema>;

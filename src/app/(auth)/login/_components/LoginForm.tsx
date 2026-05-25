@@ -2,13 +2,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import logo from "@/app/assets/logo.png";
-import { Eye, Mail, Lock } from "lucide-react";
+import { Eye, Mail, Lock, EyeOff } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { LoginFormData, loginSchema } from "../../_schema/schema";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useState } from "react";
 
 
 export default function LoginForm() {
+  const[showPassword, setShowPassword] = useState(false);
+
   const {
     register,
     handleSubmit,
@@ -90,6 +93,12 @@ export default function LoginForm() {
                 className="w-full outline-none"
                 {...register("password")}
               />
+              <div onClick={()=> setShowPassword(!showPassword)}>
+                {showPassword
+                 ? <EyeOff className="text-gray-400 cursor-pointer" size={20} />
+                 : <Eye className="text-gray-400 cursor-pointer" size={20} />
+                }
+              </div>
 
               <Eye
                 className="text-gray-400 cursor-pointer"
