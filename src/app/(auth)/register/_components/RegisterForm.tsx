@@ -7,6 +7,8 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { registerSchema, RegisterFormData } from "../../_schema/schema";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Label } from "@/components/ui/label";
 
 export default function RegisterForm() {
     const [showPassword, setShowPassword] = useState(false);
@@ -106,21 +108,22 @@ export default function RegisterForm() {
 
                     {/* Gender */}
                     <div>
-                        <label className="block mb-2 font-medium">Gender</label>
-                        <div className="flex gap-6">
-                            <div>
-                                <input type="radio" id="male" value="male" className="accent-cyan-500" {...register("gender")} />
-                                <label htmlFor="male" className="pl-2">Male</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="female" value="female" className="accent-cyan-500" {...register("gender")} />
-                                <label htmlFor="female" className="pl-2">Female</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="other" value="other" className="accent-cyan-500" {...register("gender")} />
-                                <label htmlFor="other" className="pl-2">Other</label>
-                            </div>
-                        </div>
+                      <label className="block mb-2 font-medium">Gender</label>
+
+                      <RadioGroup defaultValue='beginner' className='flex items-center gap-4'>
+                      <div className='flex items-center gap-2'>
+                      <RadioGroupItem value='male' id='male' />
+                        <Label htmlFor='beginner'>Male</Label>
+                      </div>
+                      <div className='flex items-center gap-2'>
+                        <RadioGroupItem value='female' id='female' />
+                        <Label htmlFor='female'>Female</Label>
+                      </div>
+                      <div className='flex items-center gap-2'>
+                        <RadioGroupItem value='other' id='other' />
+                        <Label htmlFor='other'>Other</Label>
+                      </div>
+                    </RadioGroup>
                         {errors.gender && (
                             <p className="text-red-500 text-sm mt-1">{errors.gender.message}</p>
                         )}
